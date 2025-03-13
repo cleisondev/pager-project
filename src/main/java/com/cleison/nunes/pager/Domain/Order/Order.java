@@ -23,13 +23,17 @@ public class Order {
     private List<Item> itens;
     private String status;
     private LocalDateTime orderTime;
-    private Pager pager;
+    private String queueNumber;
 
-    public Order(OrderDTO orderDTO) {
-        this.pager = orderDTO.pager();
-        this.orderTime = orderDTO.orderTime();
-        this.status = orderDTO.status();
-        this.itens = orderDTO.itens();
-        this.user = orderDTO.user();
+    public Order(OrderDTO orderDto) {
+        this.user = orderDto.user();
+        this.itens = orderDto.itens();
+        this.status = orderDto.status();
+        this.orderTime = orderDto.orderTime();
+        this.queueNumber = generateQueueNumber();
+    }
+
+    private String generateQueueNumber() {
+        return "Q-" + System.currentTimeMillis();
     }
 }

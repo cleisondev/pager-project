@@ -11,5 +11,5 @@ public record OrderDTO(User user,
                        List<Item> itens,
                        String status,
                        LocalDateTime orderTime,
-                       Pager pager)    {
+                       String queueNumber)    {
 }

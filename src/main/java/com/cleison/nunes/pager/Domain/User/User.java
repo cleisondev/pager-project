@@ -24,4 +24,10 @@ public class User {
     private String device;
     private Order order;
 
+    public User(UserDTO userDTO) {
+        this.name = userDTO.name();
+        this.email = userDTO.email();
+        this.phoneNumber = userDTO.phoneNumber();
+        this.device = userDTO.device();
+    }
 }

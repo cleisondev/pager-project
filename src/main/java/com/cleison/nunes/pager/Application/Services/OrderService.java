@@ -1,4 +1,4 @@
-package com.cleison.nunes.pager.Application;
+package com.cleison.nunes.pager.Application.Services;
 
 import com.cleison.nunes.pager.Domain.Order.Order;
 import com.cleison.nunes.pager.Domain.Order.OrderDTO;
