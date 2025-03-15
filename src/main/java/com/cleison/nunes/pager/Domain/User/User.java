@@ -22,7 +22,6 @@ public class User {
     private String email;
     private String phoneNumber;
     private String device;
-    private Order order;
 
     public User(UserDTO userDTO) {
         this.name = userDTO.name();
