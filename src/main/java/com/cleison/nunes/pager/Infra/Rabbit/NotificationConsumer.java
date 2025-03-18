@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class NotificationConsumer {
     @RabbitListener(queues = "order.queue")
     public void processNotification(OrderStatusChangedEvent event){
+
         System.out.println("Enviei " + event.getStatus());
     }
 }

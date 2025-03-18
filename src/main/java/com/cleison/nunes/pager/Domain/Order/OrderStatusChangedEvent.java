@@ -12,9 +12,13 @@ import java.io.Serializable;
 public class OrderStatusChangedEvent implements Serializable {
     private String orderId;
     private String status;
+    private String phoneNumber;
+    private String userName;
 
-    public OrderStatusChangedEvent(String orderId, String status) {
-        this.orderId = orderId;
-        this.status = status;
+    public OrderStatusChangedEvent(Order orderData) {
+        this.orderId = orderData.getId();
+        this.status = orderData.getStatus();
+        this.phoneNumber = orderData.getUser().getPhoneNumber();
+        this.userName = orderData.getUser().getName();
     }
 }

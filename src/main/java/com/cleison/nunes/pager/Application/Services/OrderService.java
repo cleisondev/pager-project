@@ -49,7 +49,7 @@ public class OrderService {
         Order savedOrder = this._orderRepo.save(existingOrder);
 
         if(orderReady){
-            OrderStatusChangedEvent event = new OrderStatusChangedEvent(savedOrder.getId(), savedOrder.getStatus());
+            OrderStatusChangedEvent event = new OrderStatusChangedEvent(existingOrder);
             orderNotificationPublisher.publish(event);
         }
 
